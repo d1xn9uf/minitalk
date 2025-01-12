@@ -6,7 +6,7 @@
 /*   By: mzary <mzary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 17:00:14 by mzary             #+#    #+#             */
-/*   Updated: 2025/01/02 22:49:13 by mzary            ###   ########.fr       */
+/*   Updated: 2025/01/12 03:47:01 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	main(void)
 	struct sigaction	sa_s;
 
 	sa_s.sa_sigaction = respond;
-	sigemptyset(&(sa_s.sa_mask));
 	sa_s.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &sa_s, NULL);
 	sigaction(SIGUSR2, &sa_s, NULL);

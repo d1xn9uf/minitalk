@@ -6,13 +6,13 @@
 /*   By: mzary <mzary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 14:44:43 by mzary             #+#    #+#             */
-/*   Updated: 2025/01/02 22:44:34 by mzary            ###   ########.fr       */
+/*   Updated: 2025/01/12 03:53:58 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	g_hold;
+static int	g_hold;
 static void	send_byte(__pid_t server_pid, char byte);
 static void	send_message(__pid_t server_pid, char *message);
 static int	check_pid(char *arg, __pid_t *p_spid);
@@ -26,7 +26,6 @@ int	main(int ac, char **av)
 	if (ac != 3 || check_pid(av[1], &server_pid) == -1)
 		exit(EXIT_FAILURE);
 	sa_c.sa_flags = 0;
-	sigemptyset(&(sa_c.sa_mask));
 	sa_c.sa_handler = permit;
 	sigaction(SIGUSR1, &sa_c, NULL);
 	g_hold = 0;

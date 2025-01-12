@@ -6,11 +6,11 @@
 /*   By: mzary <mzary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 20:26:40 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/31 15:25:06 by mzary            ###   ########.fr       */
+/*   Updated: 2025/01/11 23:15:18 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
 
 static char	*edge_case(int n)
 {

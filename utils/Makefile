@@ -6,7 +6,7 @@
 #    By: mzary <mzary@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 13:16:20 by mzary             #+#    #+#              #
-#    Updated: 2024/12/18 13:35:49 by mzary            ###   ########.fr        #
+#    Updated: 2025/01/06 00:22:19 by mzary            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,10 @@ OBJ = $(SRC:.c=.o)
 all: libft.a
 
 libft.a: $(OBJ)
-	ar rcs ../libft.a $^
 
 %.o: %.c libft.h
 	cc -Wall -Wextra -Werror -c $< -o $@
+	ar rcs ../libft.a $@
 
 clean:
 	rm -rf $(OBJ)
@@ -30,4 +30,4 @@ fclean: clean
 
 re: fclean all
 
-PHONY: clean
+.PHONY: clean
